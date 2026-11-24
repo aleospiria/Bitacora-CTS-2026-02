@@ -244,6 +244,7 @@ function Como() {
         <h3>Herramienta de definición: árbol de problemas</h3>
         <p>Primero se puso el problema central en el tronco. Luego se llenaron las raíces con las causas y las ramas con los efectos. Se descartaron los 5 porqués y la espina de pescado por las razones del registro de decisiones.</p>
       </div>
+      <Oraculo />
       <Pendiente>{d.como.texto}</Pendiente>
     </Seccion>
   )
@@ -322,18 +323,18 @@ function Oraculo() {
   const o = d.oraculo
   return (
     <div className="oraculo">
-      <h3 className="sub"><Network size={18} aria-hidden /> Dónde vive la detección: {o.nombre}</h3>
+      <h3 className="sub"><Network size={18} aria-hidden /> Referente técnico: {o.nombre}</h3>
       <p>{o.intro}</p>
       <div className="capturas">
         {o.capturas.map((c) => <CapturaAnotada key={c.src} c={c} />)}
       </div>
-      <h4>Cómo funciona el módulo de incendios</h4>
+      <h4>Cómo funciona su módulo de incendios</h4>
       <ol className="flujo">
         {o.flujo.map(([t, s]) => <li key={t}><strong>{t}</strong><span>{s}</span></li>)}
       </ol>
       <h4>Tecnología</h4>
       <ul className="etiquetas">{o.tecnologia.map((t) => <li key={t}>{t}</li>)}</ul>
-      <h4>Qué aprendimos construyéndola</h4>
+      <h4>Qué aprendimos y sirve a la propuesta</h4>
       <ul className="aprendizajes">{o.aprendizajes.map((t) => <li key={t}>{t}</li>)}</ul>
       <p className="nota"><ShieldCheck size={14} aria-hidden /> {o.aviso}</p>
     </div>
@@ -355,7 +356,6 @@ function Propuesta() {
         ))}
       </div>
       <p className="nota"><ExternalLink size={14} aria-hidden /> {p.fuentes}</p>
-      <Oraculo />
       <h3 className="sub">Validación con actores reales</h3>
       <Pendiente>{p.validacion.texto}</Pendiente>
     </Seccion>

@@ -84,7 +84,7 @@ export const etapas = [
       'Esa experiencia es la base de la propuesta: conocía el problema desde la parte técnica antes de elegirlo para el curso.',
       'Con técnicos y operadores de campo aprendimos cómo se trabaja en el territorio. Un aprendizaje clave: las apps móviles para tomar datos en campo se diseñan offline-first, porque casi siempre en esos lugares no hay señal.',
       'Mi jefe es el project manager y mantiene comunicación constante con aliados y otros actores interesados, incluidos quienes quieren probar una prueba piloto.',
-      'La plataforma se llama Oráculo (ver la sección Propuesta). El módulo de incendios es solo una parte de un proyecto más grande.',
+      'La plataforma se llama Oráculo y es mi referente técnico (ver El cómo). El módulo de incendios es solo una parte de un proyecto más grande.',
     ],
     evidencia: null,
   },
@@ -257,7 +257,7 @@ export const propuesta = {
     ['Historial', 'Evolución del índice en los últimos días.'],
   ],
   fuentes:
-    'Imágenes satelitales e índice de incendio vía APIs de Terrasacha, empresa colombiana donde trabajo. Declaro este vínculo para que se lea la propuesta con ese contexto. Terrasacha ya tiene un módulo de detección de incendios con sensores IoT; esta propuesta lo complementa con una vista pública para el ciudadano. Los contratos de la API están por confirmar.',
+    'La propuesta es independiente de cualquier producto. Mi trabajo en Terrasacha es un referente: por esa experiencia sé qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Declaro este vínculo para que se lea la propuesta con ese contexto. Las fuentes de datos concretas están por definir.',
   validacion: {
     pendiente: true,
     texto:
@@ -269,7 +269,7 @@ export const propuesta = {
 export const oraculo = {
   nombre: 'Oráculo Terrasacha',
   intro:
-    'Oráculo es la plataforma de Terrasacha para el análisis geoespacial. Permite dibujar un área en el mapa, elegir un tipo de análisis y obtener imágenes y resultados. La detección de incendios es uno de sus modelos de inteligencia artificial.',
+    'Oráculo es la plataforma de Terrasacha donde trabajo. No es parte de la propuesta: es mi referente. Haber construido un análisis geoespacial real, con su módulo de detección de incendios, me permite saber qué se puede desarrollar y cómo hacerlo. En la plataforma se dibuja un área en el mapa, se elige un tipo de análisis y se obtienen imágenes y resultados.',
   capturas: [
     {
       src: 'img/oraculo-inicio.png',
@@ -320,7 +320,7 @@ export const ctsDimensiones = [
     puntos: [
       'Climatología: El Niño y el cambio climático crean sequías, calor y viento que preparan el incendio.',
       'Ecología: estudia la pérdida de biodiversidad y el daño a páramos y bosques andinos.',
-      'En el proyecto: el índice NDVI mide la salud de la vegetación y la temperatura superficial mide el calor del suelo.',
+      'Referente: el índice NDVI mide la salud de la vegetación y la temperatura superficial mide el calor del suelo.',
     ],
   },
   {
@@ -328,7 +328,7 @@ export const ctsDimensiones = [
     puntos: [
       'Satélites (MODIS, VIIRS) detectan focos de calor casi en tiempo real.',
       'Inteligencia artificial predice zonas de riesgo; helicópteros, drones y sistemas de descarga de agua combaten el fuego.',
-      'En el proyecto: Oráculo corre un modelo de IA sobre imágenes MODIS, y los sensores IoT miden en el sitio.',
+      'Referente: en Oráculo corre un modelo de IA sobre imágenes MODIS, y los sensores IoT miden en el sitio.',
     ],
   },
   {
@@ -336,7 +336,7 @@ export const ctsDimensiones = [
     puntos: [
       'Las decisiones humanas (quemas, deforestación) causan la mayoría de los incendios, y las comunidades son a la vez víctima y primera defensa.',
       'Las políticas públicas y la voluntad política definen los recursos para prevenir.',
-      'En el proyecto: operadores de campo y aliados determinan si la tecnología se usa. Sin señal o sin confianza, la alerta no sirve.',
+      'Aprendido en campo: operadores y aliados determinan si la tecnología se usa. Sin señal o sin confianza, la alerta no sirve.',
     ],
   },
 ]
