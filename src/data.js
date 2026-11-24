@@ -82,7 +82,9 @@ export const etapas = [
       'Mi participación con actores y territorio no fue una salida puntual. Trabajo en Terrasacha, un proyecto donde desarrollamos una plataforma más amplia. Uno de sus módulos detecta incendios con sensores IoT para monitorear cultivos de forma constante y en tiempo real.',
     detalle: [
       'Esa experiencia es la base de la propuesta: conocía el problema desde la parte técnica antes de elegirlo para el curso.',
-      'Por completar: qué hace el módulo, con qué actores se ha trabajado (productores, técnicos, aliados) y qué se aprendió. Sin nombres ni datos personales.',
+      'Con técnicos y operadores de campo aprendimos cómo se trabaja en el territorio. Un aprendizaje clave: las apps móviles para tomar datos en campo se diseñan offline-first, porque casi siempre en esos lugares no hay señal.',
+      'Mi jefe es el project manager y mantiene comunicación constante con aliados y otros actores interesados, incluidos quienes quieren probar una prueba piloto.',
+      'La plataforma se llama Oráculo (ver la sección Propuesta). El módulo de incendios es solo una parte de un proyecto más grande.',
     ],
     evidencia: null,
   },
@@ -227,8 +229,18 @@ export const recoleccion = {
 
 export const hallazgos = {
   pendiente: true,
-  texto: 'Por completar: hallazgos, cada uno enlazado a su evidencia y a la causa priorizada.',
-  items: [],
+  texto: 'Por completar: más hallazgos, cada uno enlazado a su evidencia y a la causa priorizada.',
+  items: [
+    {
+      titulo: 'En campo casi nunca hay señal',
+      fuente: 'Trabajo con técnicos y operadores de campo en Terrasacha',
+      detalle:
+        'Quienes toman datos en el territorio trabajan en zonas sin conectividad. Por eso las apps móviles para operadores se construyen offline-first: guardan los datos en el dispositivo y los sincronizan cuando vuelve la señal.',
+      implicacion:
+        'Una alerta o un mapa que solo funcione con internet falla justo donde hace falta. La propuesta mantiene el modo offline (caché de la última consulta) y no depende solo de notificaciones push.',
+      causa: 'Conecta con la causa estructural: la alerta existe, pero no siempre llega ni se puede usar donde ocurre el incendio.',
+    },
+  ],
 }
 
 export const propuesta = {
@@ -246,8 +258,88 @@ export const propuesta = {
   ],
   fuentes:
     'Imágenes satelitales e índice de incendio vía APIs de Terrasacha, empresa colombiana donde trabajo. Declaro este vínculo para que se lea la propuesta con ese contexto. Terrasacha ya tiene un módulo de detección de incendios con sensores IoT; esta propuesta lo complementa con una vista pública para el ciudadano. Los contratos de la API están por confirmar.',
-  validacion: { pendiente: true, texto: 'Por completar: cómo validamos la propuesta con actores reales y qué cambió.' },
+  validacion: {
+    pendiente: true,
+    texto:
+      'Plan: presentar la propuesta al project manager de Terrasacha, que tiene contacto constante con aliados y con actores interesados en una prueba piloto. Por completar: fecha, qué dijo y qué cambió a raíz de su opinión.',
+  },
 }
+
+// Plataforma donde vive el módulo de detección de incendios
+export const oraculo = {
+  nombre: 'Oráculo Terrasacha',
+  intro:
+    'Oráculo es la plataforma de Terrasacha para el análisis geoespacial. Permite dibujar un área en el mapa, elegir un tipo de análisis y obtener imágenes y resultados. La detección de incendios es uno de sus modelos de inteligencia artificial.',
+  capturas: [
+    {
+      src: 'img/oraculo-inicio.png',
+      alt: 'Pantalla de inicio de Oráculo con acceso rápido y la lista de imágenes exportadas',
+      titulo: '1. Inicio',
+      texto:
+        'El punto de entrada. El botón «Nuevo Análisis Satelital» abre el mapa para empezar una consulta; el historial guarda las anteriores.',
+      marcas: [{ left: 48.5, top: 36, width: 38.5, height: 6, label: 'Aquí empieza todo' }],
+    },
+    {
+      src: 'img/oraculo-analisis.png',
+      alt: 'Mapa de Bogotá con el panel Tipo de análisis, que ofrece exportación normal y modelos de IA',
+      titulo: '2. Tipo de análisis',
+      texto:
+        'Se dibuja el área de interés y se elige el tipo de análisis. Entre los modelos de IA está «Detección de incendios».',
+      marcas: [{ left: 2.2, top: 50.5, width: 13.2, height: 9.5, label: 'Detección de incendios' }],
+    },
+  ],
+  flujo: [
+    ['Dibujar el área', 'El usuario marca en el mapa la zona que quiere vigilar.'],
+    ['Elegir «Detección de incendios»', 'Pipeline con datos MODIS: preprocesamiento con NDVI y temperatura superficial.'],
+    ['Inferencia con IA', 'Un modelo entrenado analiza esas imágenes para detectar posibles incendios.'],
+    ['Descargar el resultado', 'La imagen resultante queda en el historial para consultarla o descargarla.'],
+  ],
+  tecnologia: [
+    'Python y FastAPI',
+    'Google Earth Engine',
+    'Imágenes MODIS y Sentinel',
+    'Mapas con Leaflet',
+    'Modelos de IA (ONNX)',
+    'Sensores IoT',
+    'Almacenamiento en la nube',
+    'Autenticación de usuarios',
+  ],
+  aprendizajes: [
+    'Los operadores de campo necesitan herramientas que funcionen sin señal (offline-first).',
+    'La plataforma combina dos fuentes: satélites para ver el territorio y sensores IoT para medir en el sitio.',
+    'Un modelo de IA no sirve sin un flujo claro: elegir área, procesar, inferir y entregar un resultado comprensible.',
+  ],
+  aviso:
+    'Se muestra solo la arquitectura general. No se publican claves, direcciones internas ni datos de clientes.',
+}
+
+// Dimensiones CTS (de la ficha técnica) aplicadas al proyecto
+export const ctsDimensiones = [
+  {
+    nombre: 'Ciencia',
+    puntos: [
+      'Climatología: El Niño y el cambio climático crean sequías, calor y viento que preparan el incendio.',
+      'Ecología: estudia la pérdida de biodiversidad y el daño a páramos y bosques andinos.',
+      'En el proyecto: el índice NDVI mide la salud de la vegetación y la temperatura superficial mide el calor del suelo.',
+    ],
+  },
+  {
+    nombre: 'Tecnología',
+    puntos: [
+      'Satélites (MODIS, VIIRS) detectan focos de calor casi en tiempo real.',
+      'Inteligencia artificial predice zonas de riesgo; helicópteros, drones y sistemas de descarga de agua combaten el fuego.',
+      'En el proyecto: Oráculo corre un modelo de IA sobre imágenes MODIS, y los sensores IoT miden en el sitio.',
+    ],
+  },
+  {
+    nombre: 'Sociedad',
+    puntos: [
+      'Las decisiones humanas (quemas, deforestación) causan la mayoría de los incendios, y las comunidades son a la vez víctima y primera defensa.',
+      'Las políticas públicas y la voluntad política definen los recursos para prevenir.',
+      'En el proyecto: operadores de campo y aliados determinan si la tecnología se usa. Sin señal o sin confianza, la alerta no sirve.',
+    ],
+  },
+]
 
 export const decisiones = [
   {

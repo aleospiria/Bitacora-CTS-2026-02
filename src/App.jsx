@@ -276,9 +276,67 @@ function Evidencias() {
 
 function Hallazgos() {
   return (
-    <Seccion id="hallazgos" numero="07" titulo="Hallazgos" icon={Search}>
+    <Seccion id="hallazgos" numero="07" titulo="Hallazgos" icon={Search}
+      intro="Lo que aprendimos del trabajo con técnicos y operadores, y qué cambió en la propuesta.">
+      <div className="hallazgos">
+        {d.hallazgos.items.map((h, i) => (
+          <article className="hallazgo" key={h.titulo}>
+            <span className="chip">Hallazgo {i + 1}</span>
+            <h3>{h.titulo}</h3>
+            <p className="fuente">Fuente: {h.fuente}</p>
+            <p>{h.detalle}</p>
+            <dl>
+              <dt>Qué cambia en la propuesta</dt><dd>{h.implicacion}</dd>
+              <dt>Relación con la causa</dt><dd>{h.causa}</dd>
+            </dl>
+          </article>
+        ))}
+      </div>
       <Pendiente>{d.hallazgos.texto}</Pendiente>
     </Seccion>
+  )
+}
+
+function CapturaAnotada({ c }) {
+  const [falla, setFalla] = useState(false)
+  return (
+    <figure className="captura">
+      <div className="captura-marco">
+        {falla ? (
+          <div className="captura-falta"><ImageIcon size={28} aria-hidden /><span>Falta la captura <code>{c.src}</code></span></div>
+        ) : (
+          <img src={c.src} alt={c.alt} loading="lazy" onError={() => setFalla(true)} />
+        )}
+        {!falla && c.marcas.map((m) => (
+          <span key={m.label} className="marca" style={{ left: `${m.left}%`, top: `${m.top}%`, width: `${m.width}%`, height: `${m.height}%` }}>
+            <em>{m.label}</em>
+          </span>
+        ))}
+      </div>
+      <figcaption><strong>{c.titulo}.</strong> {c.texto}</figcaption>
+    </figure>
+  )
+}
+
+function Oraculo() {
+  const o = d.oraculo
+  return (
+    <div className="oraculo">
+      <h3 className="sub"><Network size={18} aria-hidden /> Dónde vive la detección: {o.nombre}</h3>
+      <p>{o.intro}</p>
+      <div className="capturas">
+        {o.capturas.map((c) => <CapturaAnotada key={c.src} c={c} />)}
+      </div>
+      <h4>Cómo funciona el módulo de incendios</h4>
+      <ol className="flujo">
+        {o.flujo.map(([t, s]) => <li key={t}><strong>{t}</strong><span>{s}</span></li>)}
+      </ol>
+      <h4>Tecnología</h4>
+      <ul className="etiquetas">{o.tecnologia.map((t) => <li key={t}>{t}</li>)}</ul>
+      <h4>Qué aprendimos construyéndola</h4>
+      <ul className="aprendizajes">{o.aprendizajes.map((t) => <li key={t}>{t}</li>)}</ul>
+      <p className="nota"><ShieldCheck size={14} aria-hidden /> {o.aviso}</p>
+    </div>
   )
 }
 
@@ -297,6 +355,7 @@ function Propuesta() {
         ))}
       </div>
       <p className="nota"><ExternalLink size={14} aria-hidden /> {p.fuentes}</p>
+      <Oraculo />
       <h3 className="sub">Validación con actores reales</h3>
       <Pendiente>{p.validacion.texto}</Pendiente>
     </Seccion>
@@ -328,6 +387,15 @@ function CTS() {
   return (
     <Seccion id="cts" numero="10" titulo="Relación con CTS" icon={Network}
       intro="Conexiones argumentadas entre el problema y los conceptos del curso.">
+      <div className="grid-3 dims">
+        {d.ctsDimensiones.map((x) => (
+          <article className="dim" key={x.nombre}>
+            <h3>{x.nombre}</h3>
+            <ul>{x.puntos.map((p) => <li key={p}>{p}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+      <h3 className="sub">Dos conexiones argumentadas</h3>
       <div className="grid-2">
         {d.cts.map((c) => (
           <article className="cts-card" key={c.titulo}>
