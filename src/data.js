@@ -108,7 +108,8 @@ export const etapas = [
     resumen:
       'Una app en Flutter que muestra, sobre imágenes satelitales, el índice de amenaza por incendios de cualquier punto de Colombia, con datos de la empresa colombiana Terrasacha.',
     detalle: [
-      'La documentación pública de Terrasacha no estaba disponible, así que los endpoints eran una propuesta por confirmar con el proveedor.',
+      'Los datos vendrían en primera instancia de Terrasacha, solo como opción. También se pueden hacer APIs propias o usar otras APIs públicas.',
+      'Después se priorizó el IDEAM como fuente principal, por ser la entidad oficial del país.',
     ],
     evidencia: null,
   },
@@ -257,7 +258,7 @@ export const propuesta = {
     ['Historial', 'Evolución del índice en los últimos días.'],
   ],
   fuentes:
-    'La propuesta es independiente de cualquier producto. Mi trabajo en Terrasacha es un referente: por esa experiencia sé qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Declaro este vínculo para que se lea la propuesta con ese contexto. Las fuentes de datos concretas están por definir.',
+    'La propuesta es independiente de cualquier producto. Mi trabajo en Terrasacha es un referente: por esa experiencia sé qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Declaro este vínculo para que se lea la propuesta con ese contexto. Fuente principal de datos: el IDEAM, porque el problema es nacional y es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios. Terrasacha se usaría en primera instancia y como opción, pero se pueden construir APIs propias o usar otras APIs públicas.',
   validacion: {
     pendiente: true,
     texto:
@@ -272,20 +273,20 @@ export const oraculo = {
     'Oráculo es la plataforma de Terrasacha donde trabajo. No es parte de la propuesta: es mi referente. Haber construido un análisis geoespacial real, con su módulo de detección de incendios, me permite saber qué se puede desarrollar y cómo hacerlo. En la plataforma se dibuja un área en el mapa, se elige un tipo de análisis y se obtienen imágenes y resultados.',
   capturas: [
     {
-      src: 'img/oraculo-inicio.png',
+      src: 'img/screen-home.png',
       alt: 'Pantalla de inicio de Oráculo con acceso rápido y la lista de imágenes exportadas',
       titulo: '1. Inicio',
       texto:
         'El punto de entrada. El botón «Nuevo Análisis Satelital» abre el mapa para empezar una consulta; el historial guarda las anteriores.',
-      marcas: [{ left: 48.5, top: 36, width: 38.5, height: 6, label: 'Aquí empieza todo' }],
+      marcas: [{ left: 48.4, top: 34.4, width: 41.8, height: 5.6, label: 'Aquí empieza todo' }],
     },
     {
-      src: 'img/oraculo-analisis.png',
+      src: 'img/screen-deteccion.jpg',
       alt: 'Mapa de Bogotá con el panel Tipo de análisis, que ofrece exportación normal y modelos de IA',
       titulo: '2. Tipo de análisis',
       texto:
         'Se dibuja el área de interés y se elige el tipo de análisis. Entre los modelos de IA está «Detección de incendios».',
-      marcas: [{ left: 2.2, top: 50.5, width: 13.2, height: 9.5, label: 'Detección de incendios' }],
+      marcas: [{ left: 2.5, top: 51, width: 12.6, height: 13.2, label: 'Detección de incendios' }],
     },
   ],
   flujo: [
@@ -356,6 +357,14 @@ export const decisiones = [
     queDecidimos: 'Construir la propuesta como aplicación web en lugar de una app móvil en Flutter.',
     porQue: 'Comodidad: una web se abre desde cualquier celular o computador sin instalar nada, y es más simple de desarrollar y mostrar.',
     cambio: 'Se mantienen los módulos del MVP. Se pierden las notificaciones push nativas y se adapta el modo offline.',
+    retro: null,
+  },
+  {
+    fecha: null,
+    titulo: 'IDEAM como fuente principal de datos',
+    queDecidimos: 'Basar el índice de amenaza en los datos del IDEAM. Terrasacha, las APIs propias y otras APIs públicas quedan como alternativas.',
+    porQue: 'El problema y la ficha técnica son nacionales y territoriales, y el IDEAM es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios.',
+    cambio: 'La primera idea contemplaba a Terrasacha como proveedor. Ahora es una opción entre varias.',
     retro: null,
   },
   {
