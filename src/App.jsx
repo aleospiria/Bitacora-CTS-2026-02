@@ -14,7 +14,6 @@ const SECCIONES = [
   { id: 'actores', label: 'Actores', icon: Users },
   { id: 'objetivos', label: 'Objetivos', icon: Target },
   { id: 'como', label: 'El cómo', icon: Compass },
-  { id: 'evidencias', label: 'Evidencias', icon: ImageIcon },
   { id: 'hallazgos', label: 'Hallazgos', icon: Search },
   { id: 'propuesta', label: 'Propuesta', icon: Lightbulb },
   { id: 'decisiones', label: 'Decisiones', icon: GitCompare },
@@ -264,34 +263,9 @@ function Como() {
   )
 }
 
-function Evidencias() {
-  const ev = d.recoleccion.evidencias
-  return (
-    <Seccion id="evidencias" numero="06" titulo="Recolección y evidencias" icon={ImageIcon}
-      intro="Fotos, videos, mapas, instrumentos y resultados del trabajo con el territorio.">
-      <div className="etica">
-        <ShieldCheck size={20} aria-hidden />
-        <p><strong>Manejo ético.</strong> {d.recoleccion.consentimiento}</p>
-      </div>
-      {ev.length === 0 ? (
-        <Pendiente>Por completar: agrega tus evidencias en <code>src/data.js</code>, en <code>recoleccion.evidencias</code>. Cada una lleva tipo, título, descripción y archivo.</Pendiente>
-      ) : (
-        <div className="galeria">
-          {ev.map((x) => (
-            <figure key={x.titulo} className="figura">
-              {x.tipo === 'video' ? <video controls src={x.src} /> : <img src={x.src} alt={x.descripcion} loading="lazy" />}
-              <figcaption><strong>{x.titulo}.</strong> {x.descripcion}</figcaption>
-            </figure>
-          ))}
-        </div>
-      )}
-    </Seccion>
-  )
-}
-
 function Hallazgos() {
   return (
-    <Seccion id="hallazgos" numero="07" titulo="Hallazgos" icon={Search}
+    <Seccion id="hallazgos" numero="06" titulo="Hallazgos" icon={Search}
       intro="Lo que aprendimos del trabajo con técnicos y operadores, y qué cambió en la propuesta.">
       <div className="hallazgos">
         {d.hallazgos.items.map((h, i) => (
@@ -351,6 +325,9 @@ function Oraculo() {
       <h4>Qué aprendimos y sirve a la propuesta</h4>
       <ul className="aprendizajes">{o.aprendizajes.map((t) => <li key={t}>{t}</li>)}</ul>
       <p className="nota"><ShieldCheck size={14} aria-hidden /> {o.aviso}</p>
+      <a className="boton-link" href={d.proyecto.terrasachaUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink size={16} aria-hidden /> Conocer Terrasacha en terrasacha.com
+      </a>
     </div>
   )
 }
@@ -358,7 +335,7 @@ function Oraculo() {
 function Propuesta() {
   const p = d.propuesta
   return (
-    <Seccion id="propuesta" numero="08" titulo={`Propuesta: ${p.nombre}`} icon={Lightbulb}>
+    <Seccion id="propuesta" numero="07" titulo={`Propuesta: ${p.nombre}`} icon={Lightbulb}>
       <div className="callout">
         <h3><Smartphone size={20} aria-hidden /> La idea</h3>
         <p>{p.idea}</p>
@@ -382,7 +359,7 @@ function Propuesta() {
 
 function Decisiones() {
   return (
-    <Seccion id="decisiones" numero="09" titulo="Decisiones y ajustes" icon={GitCompare}
+    <Seccion id="decisiones" numero="08" titulo="Decisiones y ajustes" icon={GitCompare}
       intro="Qué decidimos, qué cambió y por qué, incluida la retroalimentación recibida.">
       <div className="decisiones">
         {d.decisiones.map((x) => (
@@ -403,7 +380,7 @@ function Decisiones() {
 
 function CTS() {
   return (
-    <Seccion id="cts" numero="10" titulo="Relación con CTS" icon={Network}
+    <Seccion id="cts" numero="09" titulo="Relación con CTS" icon={Network}
       intro="Conexiones argumentadas entre el problema y los conceptos del curso.">
       <div className="grid-3 dims">
         {d.ctsDimensiones.map((x) => (
@@ -430,13 +407,12 @@ function CTS() {
 
 function IA() {
   return (
-    <Seccion id="ia" numero="11" titulo="Auditoría del uso de IA" icon={Bot} intro={d.ia.intro}>
+    <Seccion id="ia" numero="10" titulo="Auditoría del uso de IA" icon={Bot} intro={d.ia.intro}>
       {d.ia.usos.map((u) => (
         <Acordeon key={u.herramienta} titulo={u.herramienta} sub={u.para}>
           <p><strong>Para qué:</strong> {u.para}</p>
           <p><strong>Verificación:</strong> {u.verificacion}</p>
           <Fecha fecha={u.fecha} />
-          {u.pendiente && <Pendiente>Adjunta aquí la ficha de auditoría de este uso.</Pendiente>}
         </Acordeon>
       ))}
     </Seccion>
@@ -458,7 +434,7 @@ function CodigoQR() {
 
 function Reflexion() {
   return (
-    <Seccion id="reflexion" numero="12" titulo="Reflexión individual" icon={PenLine}>
+    <Seccion id="reflexion" numero="11" titulo="Reflexión individual" icon={PenLine}>
       <article className="callout">
         <h3>{d.reflexion.autor}</h3>
         <p>{d.reflexion.aporte}</p>
@@ -483,7 +459,6 @@ export default function App() {
         <Actores />
         <Objetivos />
         <Como />
-        <Evidencias />
         <Hallazgos />
         <Propuesta />
         <Decisiones />
@@ -492,7 +467,11 @@ export default function App() {
         <Reflexion />
         <CodigoQR />
       </main>
-      <footer className="footer">Bitácora CTS 2026-02 · {d.proyecto.autor}</footer>
+      <footer className="footer">
+        Bitácora CTS 2026-02 · {d.proyecto.autor}
+        <br />
+        <a href={d.proyecto.terrasachaUrl} target="_blank" rel="noopener noreferrer">terrasacha.com</a>
+      </footer>
     </>
   )
 }

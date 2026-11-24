@@ -221,3 +221,7 @@ blockquote { margin: 12px 0 0; padding: 12px 16px; border-left: 4px solid var(--
 .qr-caja svg { width: min(320px, 72vw); height: auto; }
 .qr-url { display: block; color: var(--verde-900); font-weight: 600; font-size: 1.05rem; word-break: break-all; min-height: 44px; }
 @media (min-width: 1024px) { .qr-caja svg { width: 380px; } }
+/* Enlaces */
+.boton-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 0 18px; border-radius: 999px; background: var(--verde-900); color: #fff; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background-color .2s; }
+.boton-link:hover { background: var(--verde-700); }
+.footer a { color: var(--verde-900); font-weight: 600; }
