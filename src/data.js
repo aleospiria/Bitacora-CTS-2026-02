@@ -26,7 +26,7 @@ export const etapas = [
     id: 'problema',
     etapa: 'Problema y herramientas',
     titulo: 'Elegimos el problema y lo describimos',
-    fecha: null,
+    fecha: '27-28 ago 2026',
     estado: 'hecho',
     resumen:
       'Partimos del pronóstico del IDEAM del 27 de agosto de 2026, que pone en alerta alta a Antioquia, Caldas, Cauca, Cundinamarca, Huila, La Guajira, Nariño y Tolima. Redactamos la ficha técnica de la primera entrega.',
@@ -40,7 +40,7 @@ export const etapas = [
     id: 'arbol',
     etapa: 'Problema y herramientas',
     titulo: 'Construimos el árbol de problemas',
-    fecha: null,
+    fecha: '27-28 ago 2026',
     estado: 'hecho',
     resumen:
       'Elegimos el árbol de problemas sobre los 5 porqués y la espina de pescado, porque separa causas y efectos y se entiende de un vistazo.',
@@ -54,7 +54,7 @@ export const etapas = [
     id: 'actores',
     etapa: 'Problema y herramientas',
     titulo: 'Mapeamos a los actores',
-    fecha: null,
+    fecha: '27-28 ago 2026',
     estado: 'hecho',
     resumen:
       'Identificamos nueve actores y encontramos que no están alineados: la información científica, la capacidad de respuesta y el comportamiento social van por caminos distintos.',
@@ -65,7 +65,7 @@ export const etapas = [
     id: 'objetivos',
     etapa: 'Objetivos',
     titulo: 'Definimos el objetivo general',
-    fecha: null,
+    fecha: '27-28 ago 2026',
     estado: 'hecho',
     resumen:
       'Analizar causas, consecuencias y actores desde CTS para proponer estrategias de prevención que integren ciencia, tecnología y participación comunitaria.',
@@ -76,7 +76,7 @@ export const etapas = [
     id: 'propuesta-inicial',
     etapa: 'Propuesta',
     titulo: 'Primera idea: app móvil «FuegoCero»',
-    fecha: null,
+    fecha: '15 sep 2026 (aprox.)',
     estado: 'hecho',
     resumen:
       'Una app en Flutter que muestra, sobre imágenes satelitales, el índice de amenaza por incendios de cualquier punto de Colombia, con datos de la empresa colombiana Terrasacha.',
