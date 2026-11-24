@@ -73,6 +73,31 @@ export const etapas = [
     evidencia: null,
   },
   {
+    id: 'terrasacha',
+    etapa: 'El cómo',
+    titulo: 'Trabajo continuo en Terrasacha',
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
+    estado: 'hecho',
+    resumen:
+      'Mi participación con actores y territorio no fue una salida puntual. Trabajo en Terrasacha, un proyecto donde desarrollamos una plataforma más amplia. Uno de sus módulos detecta incendios con sensores IoT para monitorear cultivos de forma constante y en tiempo real.',
+    detalle: [
+      'Esa experiencia es la base de la propuesta: conocía el problema desde la parte técnica antes de elegirlo para el curso.',
+      'Por completar: qué hace el módulo, con qué actores se ha trabajado (productores, técnicos, aliados) y qué se aprendió. Sin nombres ni datos personales.',
+    ],
+    evidencia: null,
+  },
+  {
+    id: 'retro-profesora',
+    etapa: 'Propuesta',
+    titulo: 'La profesora pregunta por un plan de participación',
+    fecha: 'Entre ago y sep 2026',
+    estado: 'hecho',
+    resumen:
+      'Tras la ficha técnica, la profesora preguntó si había un plan o propuesta de participación con actores o en el territorio. De ahí salió la idea de una app, apoyada en mi trabajo en Terrasacha. La profesora dijo que la idea estaba bien encaminada.',
+    detalle: [],
+    evidencia: null,
+  },
+  {
     id: 'propuesta-inicial',
     etapa: 'Propuesta',
     titulo: 'Primera idea: app móvil «FuegoCero»',
@@ -220,7 +245,7 @@ export const propuesta = {
     ['Historial', 'Evolución del índice en los últimos días.'],
   ],
   fuentes:
-    'Imágenes satelitales e índice de incendio vía APIs de Terrasacha (empresa colombiana). Los contratos de la API están por confirmar con el proveedor.',
+    'Imágenes satelitales e índice de incendio vía APIs de Terrasacha, empresa colombiana donde trabajo. Declaro este vínculo para que se lea la propuesta con ese contexto. Terrasacha ya tiene un módulo de detección de incendios con sensores IoT; esta propuesta lo complementa con una vista pública para el ciudadano. Los contratos de la API están por confirmar.',
   validacion: { pendiente: true, texto: 'Por completar: cómo validamos la propuesta con actores reales y qué cambió.' },
 }
 
@@ -242,10 +267,18 @@ export const decisiones = [
     retro: null,
   },
   {
+    fecha: 'Entre ago y sep 2026',
+    titulo: 'De la ficha técnica a una propuesta con participación',
+    queDecidimos: 'Pasar de describir el problema a plantear una propuesta de intervención: una app que muestra el índice de incendios.',
+    porQue: 'La profesora preguntó por un plan de participación con actores o territorio. La ficha trataba un problema nacional y difícil de abordar de forma directa, así que partí de lo que ya conocía por mi trabajo en Terrasacha.',
+    cambio: 'La ficha pasó de analizar el problema a proponer una solución concreta. La profesora validó la dirección.',
+    retro: null,
+  },
+  {
     fecha: null,
-    titulo: 'Retroalimentación recibida',
+    titulo: 'Retroalimentación de actores reales',
     queDecidimos: 'Por completar.',
-    porQue: 'Por completar: qué dijo la profesora o los actores y cómo respondimos.',
+    porQue: 'Por completar: qué dijeron los actores a quienes mostramos la propuesta y cómo respondimos.',
     cambio: 'Por completar: ejemplo de ajuste de objetivos, población o enfoque.',
     retro: 'pendiente',
   },
