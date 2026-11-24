@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
+import { QRCodeSVG } from 'qrcode.react'
 import {
   Flame, Compass, Network, Users, Target, Route, Search, Lightbulb, GitCompare,
   BookOpen, Bot, PenLine, ShieldCheck, ChevronDown, CalendarClock, CircleDashed,
-  CheckCircle2, Image as ImageIcon, FileText, Table2, TreePine, Smartphone, ExternalLink,
+  CheckCircle2, QrCode, Image as ImageIcon, FileText, Table2, TreePine, Smartphone, ExternalLink,
 } from 'lucide-react'
 import * as d from './data.js'
 
@@ -20,6 +21,7 @@ const SECCIONES = [
   { id: 'cts', label: 'CTS', icon: Network },
   { id: 'ia', label: 'Uso de IA', icon: Bot },
   { id: 'reflexion', label: 'Reflexión', icon: PenLine },
+  { id: 'qr', label: 'QR', icon: QrCode },
 ]
 
 function useScrollSpy(ids) {
@@ -200,7 +202,12 @@ function Problema() {
         <Acordeon titulo="Efectos" sub="5 ramas"><Lista items={d.arbol.efectos} clase="verde" /></Acordeon>
       </div>
       <h3 className="sub">Causa priorizada</h3>
-      <Pendiente>{d.causaPriorizada.texto}</Pendiente>
+      <article className="causa">
+        <h4>{d.causaPriorizada.titulo}</h4>
+        <p>{d.causaPriorizada.resumen}</p>
+        <ul>{d.causaPriorizada.razones.map((r) => <li key={r}>{r}</li>)}</ul>
+        <p className="nota"><strong>Fuera del alcance.</strong> {d.causaPriorizada.descartadas}</p>
+      </article>
     </Seccion>
   )
 }
@@ -231,7 +238,14 @@ function Objetivos() {
         <p>{d.objetivos.general}</p>
       </div>
       <h3 className="sub">Objetivos específicos</h3>
-      <Pendiente>{d.objetivos.especificos.texto}</Pendiente>
+      <ol className="objetivos">
+        {d.objetivos.especificos.map((o) => (
+          <li key={o.texto}>
+            <p>{o.texto}</p>
+            <small><CheckCircle2 size={14} aria-hidden /> {o.enlace}</small>
+          </li>
+        ))}
+      </ol>
     </Seccion>
   )
 }
@@ -244,8 +258,8 @@ function Como() {
         <h3>Herramienta de definición: árbol de problemas</h3>
         <p>Primero se puso el problema central en el tronco. Luego se llenaron las raíces con las causas y las ramas con los efectos. Se descartaron los 5 porqués y la espina de pescado por las razones del registro de decisiones.</p>
       </div>
+      <p>{d.como.texto}</p>
       <Oraculo />
-      <Pendiente>{d.como.texto}</Pendiente>
     </Seccion>
   )
 }
@@ -357,7 +371,11 @@ function Propuesta() {
       </div>
       <p className="nota"><ExternalLink size={14} aria-hidden /> {p.fuentes}</p>
       <h3 className="sub">Validación con actores reales</h3>
-      <Pendiente>{p.validacion.texto}</Pendiente>
+      <article className="callout validacion">
+        <h3>{p.validacion.actor}</h3>
+        <p>{p.validacion.texto}</p>
+        <p><strong>Qué cambió:</strong> {p.validacion.cambio}</p>
+      </article>
     </Seccion>
   )
 }
@@ -425,12 +443,26 @@ function IA() {
   )
 }
 
+function CodigoQR() {
+  return (
+    <section id="qr" className="seccion qr" aria-labelledby="qr-t">
+      <h2 id="qr-t">Abre la bitácora en tu celular</h2>
+      <p className="intro">Escanea el código con la cámara.</p>
+      <div className="qr-caja">
+        <QRCodeSVG value={d.proyecto.url} size={320} level="M" marginSize={4} title="Código QR de la bitácora" />
+      </div>
+      <a className="qr-url" href={d.proyecto.url}>{d.proyecto.url.replace('https://', '')}</a>
+    </section>
+  )
+}
+
 function Reflexion() {
   return (
     <Seccion id="reflexion" numero="12" titulo="Reflexión individual" icon={PenLine}>
       <article className="callout">
         <h3>{d.reflexion.autor}</h3>
-        <Pendiente>{d.reflexion.texto}</Pendiente>
+        <p>{d.reflexion.aporte}</p>
+        <blockquote>{d.reflexion.texto}</blockquote>
       </article>
       <h3 className="sub"><BookOpen size={18} aria-hidden /> Referencias</h3>
       <ul className="refs">{d.referencias.map((r) => <li key={r}>{r}</li>)}</ul>
@@ -458,6 +490,7 @@ export default function App() {
         <CTS />
         <IA />
         <Reflexion />
+        <CodigoQR />
       </main>
       <footer className="footer">Bitácora CTS 2026-02 · {d.proyecto.autor}</footer>
     </>

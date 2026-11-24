@@ -11,6 +11,7 @@ export const proyecto = {
   curso: 'Ciencia, Tecnología y Sociedad · 2026-02',
   autor: 'Víctor Alejandro Aristizábal Ospina',
   rol: 'Investigador y redactor',
+  url: 'https://bitacora-cts-2026-02.vercel.app/',
 }
 
 export const cifras = [
@@ -117,7 +118,7 @@ export const etapas = [
     id: 'cambio-web',
     etapa: 'Propuesta',
     titulo: 'Cambio: de app móvil a app web',
-    fecha: null,
+    fecha: '10 nov 2026 (aprox.)',
     estado: 'hecho',
     resumen:
       'Decidimos construir una aplicación web en lugar de una app nativa. Ver el registro de decisiones.',
@@ -125,12 +126,24 @@ export const etapas = [
     evidencia: null,
   },
   {
+    id: 'ideam',
+    etapa: 'Propuesta',
+    titulo: 'Decidimos usar el IDEAM como fuente de datos',
+    fecha: '16 nov 2026 (aprox.)',
+    estado: 'hecho',
+    resumen:
+      'Al ser un problema nacional, el IDEAM es la entidad oficial de Colombia. Terrasacha queda como opción de apoyo, y también se pueden hacer APIs propias o usar otras APIs públicas.',
+    detalle: [],
+    evidencia: null,
+  },
+  {
     id: 'como',
     etapa: 'El cómo',
     titulo: 'Metodología y plan de recolección',
-    fecha: null,
-    estado: 'pendiente',
-    resumen: 'Por completar: qué instrumentos usamos, con quién y cómo.',
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
+    estado: 'hecho',
+    resumen:
+      'Metodología: árbol de problemas para ordenar causas y efectos, y trabajo participativo desde dentro de un proyecto real (Terrasacha) con técnicos, operadores de campo y el project manager.',
     detalle: [],
     evidencia: null,
   },
@@ -138,9 +151,10 @@ export const etapas = [
     id: 'recoleccion',
     etapa: 'Recolección de información',
     titulo: 'Trabajo con actores del territorio',
-    fecha: null,
-    estado: 'pendiente',
-    resumen: 'Por completar: entrevistas, encuestas, observación, fotos o mapas, con consentimiento.',
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
+    estado: 'hecho',
+    resumen:
+      'La información de territorio salió de trabajar con técnicos y operadores de campo durante cerca de año y medio. Por completar: evidencias (capturas, fotos o notas) sin datos personales.',
     detalle: [],
     evidencia: null,
   },
@@ -148,9 +162,10 @@ export const etapas = [
     id: 'hallazgos',
     etapa: 'Hallazgos',
     titulo: 'Qué encontramos',
-    fecha: null,
-    estado: 'pendiente',
-    resumen: 'Por completar: resultados y su relación con la causa priorizada.',
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
+    estado: 'hecho',
+    resumen:
+      'El hallazgo central: en campo casi nunca hay señal, así que las herramientas deben funcionar offline. Eso se refleja en la propuesta.',
     detalle: [],
     evidencia: null,
   },
@@ -158,20 +173,28 @@ export const etapas = [
     id: 'validacion',
     etapa: 'Propuesta',
     titulo: 'Validación con actores reales',
-    fecha: null,
-    estado: 'pendiente',
-    resumen: 'Por completar: a quién le mostramos la propuesta y qué nos dijo.',
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
+    estado: 'hecho',
+    resumen:
+      'Presenté la propuesta al project manager de Terrasacha. Le pareció bien: concientiza a más gente, sirve de publicidad aunque sea pequeña para el proyecto, que se cita, y no hay inconveniente en usar herramientas de Oráculo.',
     detalle: [],
     evidencia: null,
   },
 ]
 
 export const causaPriorizada = {
-  pendiente: true,
-  texto:
-    'Por completar: la causa que el equipo decidió priorizar. Hipótesis a partir de la ficha: la desconexión entre la alerta científica (IDEAM) y la capacidad de respuesta y el comportamiento local.',
+  titulo: 'Causas humanas prevenibles: quemas agrícolas sin control y fogatas o residuos mal manejados',
+  resumen:
+    'De las ocho causas del árbol, priorizamos las humanas que se pueden prevenir. Su raíz común es que la información de riesgo existe pero no llega de forma comprensible ni a tiempo a quien decide si prende una quema o una fogata.',
+  razones: [
+    'Las causas naturales (El Niño, calor, falta de lluvia, viento) no se pueden controlar. Las humanas sí.',
+    'La mayoría de los incendios tiene origen humano, según la ficha técnica.',
+    'El IDEAM ya publica el pronóstico de amenaza, pero el ciudadano no lo ve ni lo entiende. Es una brecha de información y de concientización, no de tecnología.',
+    'Los incendios de cobertura vegetal fueron el 67 % de las emergencias atendidas en 2024 (UNGRD).',
+  ],
+  descartadas:
+    'Deforestación e incendios intencionados quedan fuera del alcance. Dependen de intereses ilegales y de seguridad, y exceden lo que una herramienta ciudadana puede resolver.',
 }
-
 export const arbol = {
   imagen: 'img/arbol-problemas.png',
   causasNaturales: [
@@ -210,18 +233,33 @@ export const actores = [
 export const objetivos = {
   general:
     'Identificar y analizar las causas, consecuencias y actores involucrados en los incendios forestales en Colombia, desde una perspectiva de Ciencia, Tecnología y Sociedad, con el fin de proponer estrategias de prevención y mitigación que integren el conocimiento científico, las herramientas tecnológicas y la participación comunitaria.',
-  especificos: {
-    pendiente: true,
-    texto:
-      'Por completar: objetivos específicos de la intervención. Borrador de la propuesta inicial: visualizar el índice de amenaza sobre imágenes satelitales; consultar por ubicación o municipio; notificar alertas altas; permitir reporte ciudadano; mostrar historial y pronóstico.',
-  },
+  especificos: [
+    {
+      texto: 'Caracterizar las causas humanas prevenibles de los incendios forestales (quemas agrícolas y fogatas o residuos) y los actores que intervienen.',
+      enlace: 'Árbol de problemas, mapa de actores y causa priorizada.',
+      estado: 'hecho',
+    },
+    {
+      texto: 'Traducir el pronóstico de amenaza del IDEAM en un semáforo de riesgo comprensible, consultable por ubicación o municipio.',
+      enlace: 'Propuesta: mapa, índice y buscador.',
+      estado: 'hecho',
+    },
+    {
+      texto: 'Diseñar la propuesta a partir de lo aprendido con técnicos y operadores de campo: que funcione con poca señal y ofrezca recomendaciones de prevención según el nivel de riesgo.',
+      enlace: 'Hallazgo offline-first y módulos de la propuesta.',
+      estado: 'hecho',
+    },
+    {
+      texto: 'Validar la propuesta con actores reales y ajustarla según su retroalimentación.',
+      enlace: 'Validación con el project manager de Terrasacha.',
+      estado: 'hecho',
+    },
+  ],
 }
-
 export const como = {
-  pendiente: true,
-  texto: 'Por completar: enfoque metodológico, instrumentos y orden de trabajo.',
+  texto:
+    'Dos métodos. Primero, el árbol de problemas para ordenar causas y efectos. Segundo, trabajo participativo desde dentro de un proyecto real: durante cerca de año y medio trabajé en Terrasacha con técnicos y operadores de campo, y consulté al project manager, que conversa con aliados y actores interesados en pilotos.',
 }
-
 export const recoleccion = {
   consentimiento:
     'Antes de cada entrevista se pide consentimiento informado. En esta bitácora no se muestran nombres, rostros reconocibles ni datos personales de las personas del territorio.',
@@ -260,12 +298,12 @@ export const propuesta = {
   fuentes:
     'La propuesta es independiente de cualquier producto. Mi trabajo en Terrasacha es un referente: por esa experiencia sé qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Declaro este vínculo para que se lea la propuesta con ese contexto. Fuente principal de datos: el IDEAM, porque el problema es nacional y es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios. Terrasacha se usaría en primera instancia y como opción, pero se pueden construir APIs propias o usar otras APIs públicas.',
   validacion: {
-    pendiente: true,
+    actor: 'Project manager de Terrasacha',
     texto:
-      'Plan: presentar la propuesta al project manager de Terrasacha, que tiene contacto constante con aliados y con actores interesados en una prueba piloto. Por completar: fecha, qué dijo y qué cambió a raíz de su opinión.',
+      'Le presenté la propuesta. Le pareció buena idea: concientiza a más gente y funciona como publicidad, por pequeña que sea, porque el proyecto se cita. Confirmó que no hay inconveniente en usar herramientas de Oráculo. Él mantiene comunicación constante con aliados y otros actores, algunos interesados en una prueba piloto.',
+    cambio: 'No pidió cambios a la propuesta. Quedó abierta la posibilidad de una prueba piloto con aliados.',
   },
 }
-
 // Plataforma donde vive el módulo de detección de incendios
 export const oraculo = {
   nombre: 'Oráculo Terrasacha',
@@ -311,7 +349,7 @@ export const oraculo = {
     'Un modelo de IA no sirve sin un flujo claro: elegir área, procesar, inferir y entregar un resultado comprensible.',
   ],
   aviso:
-    'Se muestra solo la arquitectura general. No se publican claves, direcciones internas ni datos de clientes.',
+    'Se muestra solo la arquitectura general, con el visto bueno del project manager. No se publican claves, direcciones internas ni datos de clientes.',
 }
 
 // Dimensiones CTS (de la ficha técnica) aplicadas al proyecto
@@ -344,7 +382,7 @@ export const ctsDimensiones = [
 
 export const decisiones = [
   {
-    fecha: null,
+    fecha: '27-28 ago 2026',
     titulo: 'Árbol de problemas como herramienta principal',
     queDecidimos: 'Usar el árbol de problemas en vez de los 5 porqués o la espina de pescado.',
     porQue: 'Separa causas y efectos y deja el impacto social visible. Las causas eran claras, así que no hacía falta la espina de pescado.',
@@ -352,7 +390,7 @@ export const decisiones = [
     retro: null,
   },
   {
-    fecha: null,
+    fecha: '10 nov 2026 (aprox.)',
     titulo: 'De app móvil nativa (Flutter) a aplicación web',
     queDecidimos: 'Construir la propuesta como aplicación web en lugar de una app móvil en Flutter.',
     porQue: 'Comodidad: una web se abre desde cualquier celular o computador sin instalar nada, y es más simple de desarrollar y mostrar.',
@@ -360,7 +398,7 @@ export const decisiones = [
     retro: null,
   },
   {
-    fecha: null,
+    fecha: '16 nov 2026 (aprox.)',
     titulo: 'IDEAM como fuente principal de datos',
     queDecidimos: 'Basar el índice de amenaza en los datos del IDEAM. Terrasacha, las APIs propias y otras APIs públicas quedan como alternativas.',
     porQue: 'El problema y la ficha técnica son nacionales y territoriales, y el IDEAM es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios.',
@@ -376,40 +414,37 @@ export const decisiones = [
     retro: null,
   },
   {
-    fecha: null,
+    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
     titulo: 'Retroalimentación de actores reales',
-    queDecidimos: 'Por completar.',
-    porQue: 'Por completar: qué dijeron los actores a quienes mostramos la propuesta y cómo respondimos.',
-    cambio: 'Por completar: ejemplo de ajuste de objetivos, población o enfoque.',
-    retro: 'pendiente',
+    queDecidimos: 'Mantener la propuesta tal como estaba y apoyarnos en herramientas de Oráculo.',
+    porQue: 'El project manager de Terrasacha la validó: concientiza a más gente, sirve de publicidad al proyecto y no hay inconveniente en usar sus herramientas.',
+    cambio: 'Sin cambios en la propuesta. Queda abierta una posible prueba piloto con aliados.',
+    retro: null,
   },
 ]
 
 export const cts = [
   {
-    titulo: 'La tecnología no es neutral',
-    concepto: 'Relación bidireccional entre tecnología y sociedad',
+    titulo: 'La tecnología no es neutral: su efecto depende de quién la usa',
+    concepto: 'Construcción social de la tecnología',
     argumento:
-      'El IDEAM puede detectar los focos con satélites (MODIS y VIIRS), pero la alerta sirve solo si los bomberos locales tienen vehículos y personal para responder. La misma tecnología produce resultados distintos según los recursos y las decisiones políticas que la rodean.',
-    pendiente: false,
-    nota: 'Falta citar la lectura o el autor del curso que respalda este concepto.',
+      'El IDEAM detecta focos con satélites como MODIS y publica alertas, pero la misma alerta rinde distinto según si los bomberos locales tienen vehículos y personal, o si en campo hay señal para recibirla. El resultado no está en el artefacto sino en los recursos, las decisiones políticas y las condiciones del territorio que lo rodean.',
+    nota: 'Falta nombrar el concepto o la lectura exacta del curso (diapositivas).',
   },
   {
-    titulo: 'Contra el determinismo tecnológico',
-    concepto: 'Quién decide y quién gana o pierde',
+    titulo: 'Tener la tecnología no basta: falta apropiación social',
+    concepto: 'Contra el determinismo tecnológico y apropiación social',
     argumento:
-      'Un incendio no es solo un fenómeno natural: las quemas, la deforestación y los intereses ilegales son decisiones sociales. Una app de alerta solo cierra la brecha entre ciencia y acción si se diseña con las comunidades, que son a la vez causa y víctima.',
-    pendiente: false,
-    nota: 'Falta citar la lectura o el caso del curso que respalda este concepto.',
+      'Los satélites MODIS llevan más de 20 años observando la Tierra y el IDEAM ya publica el pronóstico, y aun así los incendios siguen. La tecnología no resuelve sola: la mayoría de los incendios nace de decisiones humanas, y cambiarlas exige educación y concientización. Por eso la propuesta no ofrece un sensor nuevo sino traducir lo que ya existe para que el ciudadano lo entienda y lo use.',
+    nota: 'Falta nombrar el concepto o la lectura exacta del curso (diapositivas).',
   },
 ]
-
 export const ia = {
   intro:
     'Se valora verificar y explicar el uso de IA. Cada uso importante lleva su ficha de auditoría. Esta es la lista de usos de esta bitácora.',
   usos: [
     {
-      fecha: null,
+      fecha: 'nov 2026',
       herramienta: 'Kiro (asistente de IA)',
       para: 'Construir el código de este sitio web de la bitácora (estructura, diseño, componentes).',
       verificacion: 'Por completar: qué revisaste y qué corregiste.',
@@ -420,11 +455,11 @@ export const ia = {
 
 export const reflexion = {
   autor: 'Víctor Alejandro Aristizábal Ospina',
-  pendiente: true,
+  aporte:
+    'Mi aporte: investigué y redacté la ficha técnica, construí el árbol de problemas y el mapa de actores, y llevé al proyecto la experiencia de campo de Terrasacha para diseñar una propuesta realista.',
   texto:
-    'Por completar: tu aporte al proyecto y lo que aprendiste en el proceso. Esta sección la escribes tú, en primera persona.',
+    'Tenemos varias herramientas y conocimientos a nuestro alcance, y aun así la falta de educación y de concientización no nos deja avanzar. Hay tecnología que parece muy nueva y futurista, pero varias de esas herramientas llevan años.',
 }
-
 export const referencias = [
   'IDEAM. (2026, 27 de agosto). Pronóstico de la Amenaza por Incendios de la Cobertura Vegetal. Actualización 27 de agosto de 2026, 12:00 HLC. Instituto de Hidrología, Meteorología y Estudios Ambientales.',
   'UNGRD. (2025, febrero). Informe de Gestión 2024. Unidad Nacional para la Gestión del Riesgo de Desastres.',
