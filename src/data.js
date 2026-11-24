@@ -12,6 +12,7 @@ export const proyecto = {
   autor: 'Víctor Alejandro Aristizábal Ospina',
   rol: 'Investigador y redactor',
   url: 'https://bitacora-cts-2026-02.vercel.app/',
+  terrasachaUrl: 'https://terrasacha.com',
 }
 
 export const cifras = [
@@ -80,12 +81,12 @@ export const etapas = [
     fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
     estado: 'hecho',
     resumen:
-      'Mi participación con actores y territorio no fue una salida puntual. Trabajo en Terrasacha, un proyecto donde desarrollamos una plataforma más amplia. Uno de sus módulos detecta incendios con sensores IoT para monitorear cultivos de forma constante y en tiempo real.',
+      'La participación con actores y territorio no fue una salida puntual: se trabaja en Terrasacha desde hace cerca de año y medio, en un proyecto donde se desarrolla una plataforma más amplia. Uno de sus módulos detecta incendios con sensores IoT para monitorear cultivos de forma constante y en tiempo real.',
     detalle: [
-      'Esa experiencia es la base de la propuesta: conocía el problema desde la parte técnica antes de elegirlo para el curso.',
+      'Esa experiencia es la base de la propuesta: ya se conocía el problema desde la parte técnica antes de elegirlo para el curso.',
       'Con técnicos y operadores de campo aprendimos cómo se trabaja en el territorio. Un aprendizaje clave: las apps móviles para tomar datos en campo se diseñan offline-first, porque casi siempre en esos lugares no hay señal.',
-      'Mi jefe es el project manager y mantiene comunicación constante con aliados y otros actores interesados, incluidos quienes quieren probar una prueba piloto.',
-      'La plataforma se llama Oráculo y es mi referente técnico (ver El cómo). El módulo de incendios es solo una parte de un proyecto más grande.',
+      'El project manager del proyecto mantiene comunicación constante con aliados y otros actores interesados, incluidos quienes quieren probar una prueba piloto.',
+      'La plataforma se llama Oráculo y es el referente técnico de la propuesta (ver El cómo). El módulo de incendios es solo una parte de un proyecto más grande.',
     ],
     evidencia: null,
   },
@@ -96,7 +97,7 @@ export const etapas = [
     fecha: 'Entre ago y sep 2026',
     estado: 'hecho',
     resumen:
-      'Tras la ficha técnica, la profesora preguntó si había un plan o propuesta de participación con actores o en el territorio. De ahí salió la idea de una app, apoyada en mi trabajo en Terrasacha. La profesora dijo que la idea estaba bien encaminada.',
+      'Tras la ficha técnica, la profesora preguntó si había un plan o propuesta de participación con actores o en el territorio. De ahí salió la idea de una app, apoyada en el trabajo en Terrasacha. La profesora dijo que la idea estaba bien encaminada.',
     detalle: [],
     evidencia: null,
   },
@@ -139,22 +140,11 @@ export const etapas = [
   {
     id: 'como',
     etapa: 'El cómo',
-    titulo: 'Metodología y plan de recolección',
+    titulo: 'Metodología',
     fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
     estado: 'hecho',
     resumen:
       'Metodología: árbol de problemas para ordenar causas y efectos, y trabajo participativo desde dentro de un proyecto real (Terrasacha) con técnicos, operadores de campo y el project manager.',
-    detalle: [],
-    evidencia: null,
-  },
-  {
-    id: 'recoleccion',
-    etapa: 'Recolección de información',
-    titulo: 'Trabajo con actores del territorio',
-    fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
-    estado: 'hecho',
-    resumen:
-      'La información de territorio salió de trabajar con técnicos y operadores de campo durante cerca de año y medio. Por completar: evidencias (capturas, fotos o notas) sin datos personales.',
     detalle: [],
     evidencia: null,
   },
@@ -176,24 +166,24 @@ export const etapas = [
     fecha: 'Hace ~1,5 años hasta hoy (rango aprox.)',
     estado: 'hecho',
     resumen:
-      'Presenté la propuesta al project manager de Terrasacha. Le pareció bien: concientiza a más gente, sirve de publicidad aunque sea pequeña para el proyecto, que se cita, y no hay inconveniente en usar herramientas de Oráculo.',
+      'Se presentó la propuesta al project manager de Terrasacha y opinó que está bien: concientiza a más gente, sirve de publicidad aunque sea pequeña para el proyecto, que se cita, y no hay inconveniente en usar herramientas de Oráculo.',
     detalle: [],
     evidencia: null,
   },
 ]
 
 export const causaPriorizada = {
-  titulo: 'Causas humanas prevenibles: quemas agrícolas sin control y fogatas o residuos mal manejados',
+  titulo: 'Sin conectividad y sin capacitación, las herramientas no se usan donde hacen falta',
   resumen:
-    'De las ocho causas del árbol, priorizamos las humanas que se pueden prevenir. Su raíz común es que la información de riesgo existe pero no llega de forma comprensible ni a tiempo a quien decide si prende una quema o una fogata.',
+    'Entre las causas del árbol, y en especial la estructural (el territorio no tiene los recursos ni la preparación para actuar a tiempo), priorizamos dos: que la falta de wifi o de señal limite el trabajo en campo, y que los operadores no estén capacitados para usar las herramientas y tomar datos de forma eficiente.',
   razones: [
-    'Las causas naturales (El Niño, calor, falta de lluvia, viento) no se pueden controlar. Las humanas sí.',
-    'La mayoría de los incendios tiene origen humano, según la ficha técnica.',
-    'El IDEAM ya publica el pronóstico de amenaza, pero el ciudadano no lo ve ni lo entiende. Es una brecha de información y de concientización, no de tecnología.',
-    'Los incendios de cobertura vegetal fueron el 67 % de las emergencias atendidas en 2024 (UNGRD).',
+    'En campo casi nunca hay señal ni wifi. Una herramienta que depende de internet falla justo donde hace falta.',
+    'Los operadores de campo son quienes toman los datos. Si no están capacitados, la información llega tarde o incompleta.',
+    'La ficha técnica señala que la alerta del IDEAM de poco sirve si el territorio no tiene recursos ni preparación para responder a tiempo.',
+    'Ambas se pueden resolver con diseño y formación: herramientas offline-first y capacitación, sin depender de factores naturales.',
   ],
   descartadas:
-    'Deforestación e incendios intencionados quedan fuera del alcance. Dependen de intereses ilegales y de seguridad, y exceden lo que una herramienta ciudadana puede resolver.',
+    'Quedan fuera las causas naturales, que no se pueden controlar, y la deforestación o los incendios intencionados, que dependen de intereses ilegales y de seguridad.',
 }
 export const arbol = {
   imagen: 'img/arbol-problemas.png',
@@ -235,37 +225,27 @@ export const objetivos = {
     'Identificar y analizar las causas, consecuencias y actores involucrados en los incendios forestales en Colombia, desde una perspectiva de Ciencia, Tecnología y Sociedad, con el fin de proponer estrategias de prevención y mitigación que integren el conocimiento científico, las herramientas tecnológicas y la participación comunitaria.',
   especificos: [
     {
-      texto: 'Caracterizar las causas humanas prevenibles de los incendios forestales (quemas agrícolas y fogatas o residuos) y los actores que intervienen.',
+      texto: 'Caracterizar las causas, los efectos y los actores de los incendios forestales en Colombia, con énfasis en la limitada capacidad de respuesta y de toma de datos en el territorio.',
       enlace: 'Árbol de problemas, mapa de actores y causa priorizada.',
-      estado: 'hecho',
     },
     {
-      texto: 'Traducir el pronóstico de amenaza del IDEAM en un semáforo de riesgo comprensible, consultable por ubicación o municipio.',
-      enlace: 'Propuesta: mapa, índice y buscador.',
-      estado: 'hecho',
-    },
-    {
-      texto: 'Diseñar la propuesta a partir de lo aprendido con técnicos y operadores de campo: que funcione con poca señal y ofrezca recomendaciones de prevención según el nivel de riesgo.',
+      texto: 'Traducir el pronóstico de amenaza del IDEAM en un semáforo de riesgo consultable por ubicación o municipio, que funcione sin depender de wifi o señal (offline-first).',
       enlace: 'Hallazgo offline-first y módulos de la propuesta.',
-      estado: 'hecho',
+    },
+    {
+      texto: 'Plantear la capacitación de los operadores de campo en el uso de estas herramientas, para que tomen datos de forma más eficiente.',
+      enlace: 'Causa priorizada y propuesta.',
     },
     {
       texto: 'Validar la propuesta con actores reales y ajustarla según su retroalimentación.',
       enlace: 'Validación con el project manager de Terrasacha.',
-      estado: 'hecho',
     },
   ],
 }
 export const como = {
   texto:
-    'Dos métodos. Primero, el árbol de problemas para ordenar causas y efectos. Segundo, trabajo participativo desde dentro de un proyecto real: durante cerca de año y medio trabajé en Terrasacha con técnicos y operadores de campo, y consulté al project manager, que conversa con aliados y actores interesados en pilotos.',
+    'Dos métodos. Primero, el árbol de problemas para ordenar causas y efectos. Segundo, trabajo participativo desde dentro de un proyecto real: durante cerca de año y medio se trabajó en Terrasacha con técnicos y operadores de campo, y se consultó al project manager, que conversa con aliados y actores interesados en pilotos.',
 }
-export const recoleccion = {
-  consentimiento:
-    'Antes de cada entrevista se pide consentimiento informado. En esta bitácora no se muestran nombres, rostros reconocibles ni datos personales de las personas del territorio.',
-  evidencias: [], // { tipo: 'foto'|'video'|'mapa'|'instrumento', titulo, descripcion, src }
-}
-
 export const hallazgos = {
   pendiente: true,
   texto: 'Por completar: más hallazgos, cada uno enlazado a su evidencia y a la causa priorizada.',
@@ -277,7 +257,7 @@ export const hallazgos = {
         'Quienes toman datos en el territorio trabajan en zonas sin conectividad. Por eso las apps móviles para operadores se construyen offline-first: guardan los datos en el dispositivo y los sincronizan cuando vuelve la señal.',
       implicacion:
         'Una alerta o un mapa que solo funcione con internet falla justo donde hace falta. La propuesta mantiene el modo offline (caché de la última consulta) y no depende solo de notificaciones push.',
-      causa: 'Conecta con la causa estructural: la alerta existe, pero no siempre llega ni se puede usar donde ocurre el incendio.',
+      causa: 'Es la causa priorizada: sin conectividad la alerta existe, pero no llega ni se puede usar donde ocurre el incendio.',
     },
   ],
 }
@@ -296,11 +276,11 @@ export const propuesta = {
     ['Historial', 'Evolución del índice en los últimos días.'],
   ],
   fuentes:
-    'La propuesta es independiente de cualquier producto. Mi trabajo en Terrasacha es un referente: por esa experiencia sé qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Declaro este vínculo para que se lea la propuesta con ese contexto. Fuente principal de datos: el IDEAM, porque el problema es nacional y es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios. Terrasacha se usaría en primera instancia y como opción, pero se pueden construir APIs propias o usar otras APIs públicas.',
+    'La propuesta es independiente de cualquier producto. El trabajo en Terrasacha es un referente: por esa experiencia se sabe qué datos satelitales y qué técnicas se necesitan y cómo integrarlos. Se declara este vínculo para que se lea la propuesta con ese contexto. Fuente principal de datos: el IDEAM, porque el problema es nacional y es la entidad oficial de Colombia que publica el pronóstico de amenaza por incendios. Terrasacha se usaría en primera instancia y como opción, pero se pueden construir APIs propias o usar otras APIs públicas.',
   validacion: {
     actor: 'Project manager de Terrasacha',
     texto:
-      'Le presenté la propuesta. Le pareció buena idea: concientiza a más gente y funciona como publicidad, por pequeña que sea, porque el proyecto se cita. Confirmó que no hay inconveniente en usar herramientas de Oráculo. Él mantiene comunicación constante con aliados y otros actores, algunos interesados en una prueba piloto.',
+      'Se presentó la propuesta y opinó que es una buena idea: concientiza a más gente y funciona como publicidad, por pequeña que sea, porque el proyecto se cita. Además confirmó que no hay inconveniente en usar herramientas de Oráculo. Mantiene comunicación constante con aliados y otros actores, algunos interesados en una prueba piloto.',
     cambio: 'No pidió cambios a la propuesta. Quedó abierta la posibilidad de una prueba piloto con aliados.',
   },
 }
@@ -308,7 +288,7 @@ export const propuesta = {
 export const oraculo = {
   nombre: 'Oráculo Terrasacha',
   intro:
-    'Oráculo es la plataforma de Terrasacha donde trabajo. No es parte de la propuesta: es mi referente. Haber construido un análisis geoespacial real, con su módulo de detección de incendios, me permite saber qué se puede desarrollar y cómo hacerlo. En la plataforma se dibuja un área en el mapa, se elige un tipo de análisis y se obtienen imágenes y resultados.',
+    'Oráculo es la plataforma de Terrasacha donde se trabaja. No es parte de la propuesta: es el referente. Haber construido un análisis geoespacial real, con su módulo de detección de incendios, permite saber qué se puede desarrollar y cómo hacerlo. En la plataforma se dibuja un área en el mapa, se elige un tipo de análisis y se obtienen imágenes y resultados.',
   capturas: [
     {
       src: 'img/screen-home.png',
@@ -409,7 +389,7 @@ export const decisiones = [
     fecha: 'Entre ago y sep 2026',
     titulo: 'De la ficha técnica a una propuesta con participación',
     queDecidimos: 'Pasar de describir el problema a plantear una propuesta de intervención: una app que muestra el índice de incendios.',
-    porQue: 'La profesora preguntó por un plan de participación con actores o territorio. La ficha trataba un problema nacional y difícil de abordar de forma directa, así que partí de lo que ya conocía por mi trabajo en Terrasacha.',
+    porQue: 'La profesora preguntó por un plan de participación con actores o territorio. La ficha trataba un problema nacional y difícil de abordar de forma directa, así que se partió de lo que ya se conocía por el trabajo en Terrasacha.',
     cambio: 'La ficha pasó de analizar el problema a proponer una solución concreta. La profesora validó la dirección.',
     retro: null,
   },
@@ -429,14 +409,12 @@ export const cts = [
     concepto: 'Construcción social de la tecnología',
     argumento:
       'El IDEAM detecta focos con satélites como MODIS y publica alertas, pero la misma alerta rinde distinto según si los bomberos locales tienen vehículos y personal, o si en campo hay señal para recibirla. El resultado no está en el artefacto sino en los recursos, las decisiones políticas y las condiciones del territorio que lo rodean.',
-    nota: 'Falta nombrar el concepto o la lectura exacta del curso (diapositivas).',
   },
   {
     titulo: 'Tener la tecnología no basta: falta apropiación social',
     concepto: 'Contra el determinismo tecnológico y apropiación social',
     argumento:
-      'Los satélites MODIS llevan más de 20 años observando la Tierra y el IDEAM ya publica el pronóstico, y aun así los incendios siguen. La tecnología no resuelve sola: la mayoría de los incendios nace de decisiones humanas, y cambiarlas exige educación y concientización. Por eso la propuesta no ofrece un sensor nuevo sino traducir lo que ya existe para que el ciudadano lo entienda y lo use.',
-    nota: 'Falta nombrar el concepto o la lectura exacta del curso (diapositivas).',
+      'Los satélites MODIS llevan más de 20 años observando la Tierra y el IDEAM ya publica el pronóstico, y aun así los incendios siguen. La tecnología no resuelve sola: la mayoría de los incendios nace de decisiones humanas, y cambiarlas exige educación, concientización y capacitación. Por eso la propuesta no ofrece un sensor nuevo sino traducir lo que ya existe para que quien está en el territorio lo entienda y lo use, incluso sin conexión.',
   },
 ]
 export const ia = {
@@ -447,8 +425,9 @@ export const ia = {
       fecha: 'nov 2026',
       herramienta: 'Kiro (asistente de IA)',
       para: 'Construir el código de este sitio web de la bitácora (estructura, diseño, componentes).',
-      verificacion: 'Por completar: qué revisaste y qué corregiste.',
-      pendiente: true,
+      verificacion:
+        'La IA generó la estructura y el diseño. Se revisó cada sección contra los documentos propios (ficha técnica, árbol de problemas, README de la propuesta) y contra la experiencia real en Terrasacha. Se corrigieron enfoques, por ejemplo que Oráculo es un referente y no parte de la propuesta, y el tono de los textos. Se probó que el sitio compile y se muestre bien.',
+      pendiente: false,
     },
   ],
 }
