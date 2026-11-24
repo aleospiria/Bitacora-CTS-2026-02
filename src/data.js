@@ -247,8 +247,6 @@ export const como = {
     'Dos métodos. Primero, el árbol de problemas para ordenar causas y efectos. Segundo, trabajo participativo desde dentro de un proyecto real: durante cerca de año y medio se trabajó en Terrasacha con técnicos y operadores de campo, y se consultó al project manager, que conversa con aliados y actores interesados en pilotos.',
 }
 export const hallazgos = {
-  pendiente: true,
-  texto: 'Por completar: más hallazgos, cada uno enlazado a su evidencia y a la causa priorizada.',
   items: [
     {
       titulo: 'En campo casi nunca hay señal',
@@ -266,6 +264,8 @@ export const propuesta = {
   nombre: 'FuegoCero (versión web)',
   idea:
     'Una aplicación web que traduce el índice de amenaza por incendios en una experiencia visual y clara para el ciudadano. El usuario abre el mapa, toca su ubicación o busca su municipio y ve el nivel de riesgo en semáforo, con recomendaciones de prevención.',
+  concientizacion:
+    'Además de informar, la propuesta busca concientizar: que las personas tengan ganas de educarse sobre los incendios forestales, de entender por qué ocurren y qué pueden hacer para evitarlos. Por eso la herramienta no se limita a mostrar el riesgo: ofrece recomendaciones de prevención y explica de dónde salen los datos, para que la información despierte interés por aprender y ayude a cambiar hábitos.',
   modulos: [
     ['Mapa satelital', 'Capas de índice, focos de calor y cobertura vegetal.'],
     ['Índice de incendio', 'Semáforo por punto consultado, con fecha de actualización.'],

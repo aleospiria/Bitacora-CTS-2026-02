@@ -281,7 +281,6 @@ function Hallazgos() {
           </article>
         ))}
       </div>
-      <Pendiente>{d.hallazgos.texto}</Pendiente>
     </Seccion>
   )
 }
@@ -339,6 +338,7 @@ function Propuesta() {
       <div className="callout">
         <h3><Smartphone size={20} aria-hidden /> La idea</h3>
         <p>{p.idea}</p>
+        <p>{p.concientizacion}</p>
       </div>
       <h3 className="sub">Módulos</h3>
       <div className="grid-modulos">
